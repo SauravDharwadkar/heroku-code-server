@@ -24,12 +24,7 @@ RUN apt-get install -y tzdata && \
     ssh \
     sudo \
     vim \
-    && echo "deb http://ppa.launchpad.net/alessandro-strada/ppa/ubuntu focal main " >> /etc/apt/sources.list \
-    && echo "deb-src http://ppa.launchpad.net/alessandro-strada/ppa/ubuntu focal main " >> /etc/apt/sources.list \
-    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ad5f235df639b041 \
-    && apt-get update \
-    && apt-get install -y google-drive-ocamlfuse fuse \
-    && echo "user_allow_other" >> /etc/fuse.conf \
+   rclone \
     && rm -rf /var/lib/apt/lists/*
 
 
@@ -66,6 +61,6 @@ EXPOSE 8080
 USER codere
 WORKDIR /home/coder
 COPY run.sh /home/coder
-RUN mkdir gdrive && chmod +x run.sh
+RUN mkdir cloud
 
-CMD /home/coder/run.sh ; /usr/local/bin/code-server --host 0.0.0.0 --port $PORT gdrive
+CMD bash /home/coder/run.sh ; /usr/local/bin/code-server --host 0.0.0.0 --port $PORT cloud

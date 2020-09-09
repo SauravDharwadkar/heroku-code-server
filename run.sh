@@ -1,13 +1,13 @@
-if [ -n "${CLIENT_ID}" ] && [ -n "${CLIENT_SECRET}" ] && [ -n "${TOKEN}" ]; then
-		# google-drive-ocamlfuse doesn't clear stdin so pipe works
-		su coder -l -c "echo \"${TOKEN}\" | \
-		 google-drive-ocamlfuse -headless \
-		 -id \"${CLIENT_ID}.apps.googleusercontent.com\" \
-		 -secret \"${CLIENT_SECRET}\""
-
-        exec su coder -l -c "google-drive-ocamlfuse /home/coder/gdrive"
+if [ -n "${BASE_CONF}" ] && [ -n "${COULD_NAME}" ] ; then
+    cat /proc/mounts | grep rclonesd
+    if [ $? -eq 0 ]; then
+        echo "already mounred skipping"
+    else 
+        echo $BASE_CONF | base64 -d > .rclone.conf
+        rclone mount $COULD_NAME:$SUB_DIR cloud  --vfs-cache-mode full --daemon
+    fi
         
 else 
-    echo "GDRIVE NOT MOUNTED" > /home/coder/gdrive/GDRIVE_NOT_MOUNTED
+    echo "CLOUD NOT MOUNTED" > /home/coder/cloud/CLOUD_NOT_MOUNTED
 fi
 
