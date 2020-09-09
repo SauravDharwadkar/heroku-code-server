@@ -1,0 +1,29 @@
+{
+    "name": "heroku-code-server-with-cloud",
+    "description": "use visual studio code in web browser i.e code-server ",
+    "repository": "https://github.com/SauravDharwadkar/heroku-code-server",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/240px-Visual_Studio_Code_1.35_icon.svg.png",
+    "keywords": ["docker","code", "vscode", "code-server"],
+    "stack": "container",
+    "env": {
+      "PASSWORD": {
+        "description": "Password for code-server.",
+        "required" : true
+      },
+      "BASE_CONF" : {
+        "description": "Use readme to get value",
+        "required" : true
+      } ,
+      "CLOUD_NAME" : {
+        "description": "Use readme to get value or put rclone app name",
+        "required" : true
+      } ,
+      "SUB_DIR" : {
+        "description": "subfolder Of main cloud to open vscode in ( make sure dir exist in cloud )",
+        "required" : false
+      },"Additional" : {
+        "description": "use for yor own purpose",
+        "required" : false
+      }
+    } 
+  }
