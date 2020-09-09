@@ -58,7 +58,7 @@ RUN cd /tmp && \
 
 ENV PORT=8080
 EXPOSE 8080
-USER codere
+USER coder
 WORKDIR /home/coder
 COPY run.sh /home/coder
 RUN mkdir cloud
