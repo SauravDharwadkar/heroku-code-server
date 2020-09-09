@@ -3,7 +3,11 @@ FROM ubuntu:20.04
 #use help to debug and finding whats wrong with my Dockerfile not working properly on heroku
 # https://github.com/ivang7/heroku-vscode
 RUN apt-get update \
- && apt-get install -y \
+ && apt-get upgrade 
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/Moscow
+RUN apt-get install -y tzdata && \
+    apt-get install -y \
     curl \
     wget \
     python3 \
@@ -59,7 +63,7 @@ RUN cd /tmp && \
 
 ENV PORT=8080
 EXPOSE 8080
-USER coder
+USER codere
 WORKDIR /home/coder
 COPY run.sh /home/coder
 RUN mkdir gdrive && chmod +x run.sh
