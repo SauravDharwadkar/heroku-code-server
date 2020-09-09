@@ -25,6 +25,7 @@ RUN apt-get install -y tzdata && \
     sudo \
     vim \
    rclone \
+   fuse \
     && rm -rf /var/lib/apt/lists/*
 
 
