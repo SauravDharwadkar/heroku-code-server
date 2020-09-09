@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 #use help to debug and finding whats wrong with my Dockerfile not working properly on heroku
 # https://github.com/ivang7/heroku-vscode
 RUN apt-get update \
- && apt-get upgrade 
+ && apt-get upgrade -y
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Moscow
 RUN apt-get install -y tzdata && \
