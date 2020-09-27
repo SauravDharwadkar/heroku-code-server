@@ -4,10 +4,10 @@ if [ -n "${BASE_CONF}" ] && [ -n "${CLOUD_NAME}" ] ; then
         echo "already mounred skipping"
     else 
         echo $BASE_CONF | base64 -d > .rclone.conf
-        rclone serve sftp  $CLOUD_NAME:$SUB_DIR --no-auth --vfs-cache-mode full --daemon
+        rclone serve sftp  $CLOUD_NAME:$SUB_DIR --no-auth --vfs-cache-mode full&
     fi
         
 else 
-    echo "CLOUD NOT MOUNTED" > /home/coder/cloud/CLOUD_NOT_MOUNTED
+    echo "CLOUD NOT MOUNTED" > /home/coder/CLOUD_NOT_MOUNTED
 fi
 
