@@ -62,6 +62,7 @@ EXPOSE 8080
 USER coder
 WORKDIR /home/coder
 COPY run.sh /home/coder
-RUN mkdir cloud
+RUN code-server --install-extension liximomo.sftp --force
+COPY sftp.js /home/coder
 
-CMD bash /home/coder/run.sh ; /usr/local/bin/code-server --host 0.0.0.0 --port $PORT cloud
+CMD bash /home/coder/run.sh ; /usr/local/bin/code-server --host 0.0.0.0 --port $PORT /home/coder
