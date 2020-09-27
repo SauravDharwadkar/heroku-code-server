@@ -63,6 +63,6 @@ USER coder
 WORKDIR /home/coder
 COPY run.sh /home/coder
 RUN code-server --install-extension liximomo.sftp --force
-COPY sftp.js /home/coder
+COPY sftp.json /home/coder
 
 CMD bash /home/coder/run.sh ; /usr/local/bin/code-server --host 0.0.0.0 --port $PORT /home/coder
