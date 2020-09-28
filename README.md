@@ -1,13 +1,115 @@
-Download rclone on your machine 
-use """ rclone config """ commanf and generate multiple account config
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://raw.githubusercontent.com/ivangabriele/vscode-heroku/master/res/icon.png" alt="Project logo"></a>
+</p>
 
-use """ curl https://raw.githubusercontent.com/SauravDharwadkar/heroku-code-server/master/rclone_conf.sh | bash """ for get config string *** BASE_CONF ***
+<h3 align="center">code-server with rclone</h3>
 
-for *** CLOUD_NAME *** use same name used in rclone or above script will show you name put them without [] squrebrackets
+<div align="center">
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/SauravDharwadkar/heroku-code-server/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/SauravDharwadkar/heroku-code-server/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-If you using any other shell than bash like zsh , you may get -e in output or other problems ,so solve by yourself
+</div>
+
+---
+
+<p align="center"> Few lines describing your project.
+    <br> 
+</p>
+
+## 📝 Table of Contents
+
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [TODO](../TODO.md)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
+
+## 🧐 About <a name = "about"></a>
+
+This is heroku app that allow you to run vscode web version "code-server" also it impliment rclone with sftp along with vscode sftp plugin to access files from multiple clouds supported by rclone .
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+[![deployment](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+<br/>
+[](#deployment)
+
+### Prerequisites
+
+You need heroku account .
+You need rclone .
+
+```
+sudo apt install rclone
+```
+
+### Installing
+
+to generate rclone config use following
+
+```bash
+rclone config
+```
+
+after adding atleast 1 working to rclone enter following to terminal to generate BASE_CONF value 
+
+```bash
+curl https://raw.githubusercontent.com/SauravDharwadkar/heroku-code-server/master/rclone_conf.sh | bash 
+```
+
+copy generated value and put in heroku ENV variables
+
+#### Eg
+
+```
+BASE_CONF
+Note: copy as it is without spaces 
+
+<here  your config string maybe long>
+
+here CLOUD_NAME igone other token texts 
+
+[<you cloud name>]
+```
+
+<br>
+
+## 🎈 Usage <a name="usage"></a>
+
+remeber the name you given to your heroku app and use that name to open your vscode on browser
+
+<br> 
+
+## 🚀 Deployment <a name = "deployment"></a>
+
+if you work on other programming other than python and c , just fork repo edit Dockerfile and change install applications also add following line in Dockerfile to preinstall vscode plugin 
+```
+RUN code-server --install-extension <plugin name> --force
+```
+
+also add heroku addons for database or other things as your need
 
 
-*** proper readme comming soon ***
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@sauravdharwadkar](https://github.com/sauravdharwadkar) - Idea & Initial work
+
+
+
+## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+
+- Inspiration 
+    - ### covid-19
+
+- References
+
+  - [code-server](https://github.com/cdr/code-server)
+
+   - [actual logo from vscode-heroku ](https://github.com/ivangabriele/vscode-heroku)
