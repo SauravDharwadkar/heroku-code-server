@@ -26,7 +26,7 @@
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
 - [Usage](#usage)
-- [TODO](../TODO.md)
+- [TODO](https://github.com/SauravDharwadkar/heroku-code-server/blob/master/TODO.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
