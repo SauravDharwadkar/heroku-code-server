@@ -1,3 +1,4 @@
 # TODO
 
-vscode / code-server plugin management 
+ - vscode / code-server plugin management 
+ - optimize dockerfile
