@@ -32,7 +32,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This is heroku app that allow you to run vscode web version "code-server" also it impliment rclone with sftp along with vscode sftp plugin to access files from multiple clouds supported by rclone .
+This is heroku app that allow you to run vscode web version "code-server" also it implement rclone with sftp along with vscode sftp plugin to access files from multiple clouds supported by rclone .
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -57,7 +57,7 @@ to generate rclone config use following
 rclone config
 ```
 
-after adding atleast 1 working to rclone enter following to terminal to generate BASE_CONF value 
+after adding at least 1 working to rclone enter following to terminal to generate BASE_CONF value 
 
 ```bash
 curl https://raw.githubusercontent.com/SauravDharwadkar/heroku-code-server/master/rclone_conf.sh | bash 
@@ -73,7 +73,7 @@ Note: copy as it is without spaces
 
 <here  your config string maybe long>
 
-here CLOUD_NAME igone other token texts 
+here CLOUD_NAME ignore other token texts 
 
 [<you cloud name>]
 ```
@@ -88,14 +88,18 @@ remeber the name you given to your heroku app and use that name to open your vsc
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-if you work on other programming other than python and c , just fork repo edit Dockerfile and change install applications also add following line in Dockerfile to preinstall vscode plugin 
+if you work on other programming other than python and c , just fork repo edit Dockerfile and change install applications also add following line in Dockerfile to preinstalled vscode plugin 
 ```
 RUN code-server --install-extension <plugin name> --force
 ```
 
 also add heroku addons for database or other things as your need
 
+## Note 
+Heroku server provide single core , some time it took while to load application if you open it after long time , to be sure it loaded completely open terminal inside code-server to confirm it loaded completely
 
+<br/>
+<br/>
 
 ## ✍️ Authors <a name = "authors"></a>
 
