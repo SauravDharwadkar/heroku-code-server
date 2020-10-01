@@ -1,5 +1,5 @@
 # !/bin/bash
-echo -e "BASE_CONF\nNote: copy as it is without spaces \n\n\n"
+echo -e "\nBASE_CONF\nNote: copy as it is without spaces \n\n\n"
 cat ~/.config/rclone/rclone.conf | base64 --wrap=0 
 
 echo -e "\n\n\nhere CLOUD_NAME igone other token texts \n"
