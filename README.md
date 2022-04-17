@@ -1,3 +1,5 @@
+# `Note`
+## This repo will not recieve update in future use https://github.com/coder/deploy-code-server this for diployment solution , you can still fork and add your own customization for personal use 
 <p align="center">
   <a href="" rel="noopener">
  <img width=200px height=200px src="https://raw.githubusercontent.com/ivangabriele/vscode-heroku/master/res/icon.png" alt="Project logo"></a>
